@@ -1,23 +1,23 @@
 "html <IDOCTYPE html>
-<html lang="en"> <head> <meta charset="UTF-
-8"> <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-<title>Shray - All-in-One Voice Assistant (SPA)
-</title> <script src="https://cdn.tailwindcss.com">
-</script> <link
-href="https://fonts.googleapis.com/css2?
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Shray - All-in-One Voice Assistant (SPA)
+</title> 
+    <script src="https://cdn.tailwindcss.com">
+</script> 
+    <link href="https://fonts.googleapis.com/css2?
 family=Sora:wght@400;600;700&display=swap"
-rel="stylesheet"> <link rel="stylesheet"
-href="https://fonts.googleapis.com/css2?
-family=Material+Symbols+Outlined:opsz,wght,FILL,GR
-/> <style> body { font-family: ‘Sora’, sans-serif;
-background-color: #0b0f10; color: white; min-
-height: 100vh; overflow: hidden; margin: O; }
-.glow-circle { box-shadow: 0 0 60px rgba(0, 219,
-231, 0.2); transition: all 0.5s ease; } .active-glow {
+rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?
+family=Material+Symbols+Outlined:opsz,wght,FILL,GR/> 
+      <style> 
+body { font-family: ‘Sora’, sans-serif; background-color: #0b0f10; color: white; min-
+height: 100vh; overflow: hidden; margin: O; } .glow-circle { box-shadow: 0 0 60px rgba(0, 219,231, 0.2); transition: all 0.5s ease; } .active-glow {
 box-shadow: 0 0 80px rgba(0, 219, 231, 0.6);
-transform: scale(1.05); } .mic-button {
-background: linear-gradient(135deg, #00dbe7
+transform: scale(1.05); } .mic-button {background: linear-gradient(135deg, #00dbe7
 0%, #008291 100%); } .screen { display: none;
 height: 100vh; width: 100%; flex-direction:
 column; overflow-y: auto; padding-bottom: 80px;
@@ -28,216 +28,230 @@ transform: translateY(10px); } to { opacity: 1;
 transform: translateY (0); } } .nav-btn.active {
 color: #00dbe7; text-shadow: 0 O 10px rgba(0,
 219, 231, 0.5); } </style> </head> <body
-class="flex flex-col"> <!-- DASHBOARD SCREEN
---> <div id="screen-dashboard" class="screen
-active fade-in"> <header class="flex justify-
-between items-center px-6 py-6 sticky top-0
-bg-[#0b0f10]/80 backdrop-blur-md z-50"> <div
-class="flex items-center gap-2"> <span
+class="flex flex-col"> 
+    <!-- DASHBOARD SCREEN--> 
+    <div id="screen-dashboard" class="screen active fade-in"> <header class="flex justify-
+between items-center px-6 py-6 sticky top-0bg-[#0b0f10]/80 backdrop-blur-md z-50"> <div
+class="flex items-center gap-2"> 
+  <span
 class="material-symbols-outlined text-
-[#00dbe7]">settings_heart</span> <h1
+[#00dbe7]">settings_heart</span> 
+  <h1
 class="text-xl font-bold tracking-
-tighter">SHRAY</h1> </div> <div class="bg-
-white/5 border border-white/10 rounded-full px-
-4 py-1 flex items-center gap-2"> <div id="status-
-indicator” class="w-2 h-2 bg-red-500 rounded-
-full"></div> <span id="status-label" class="text-
+tighter">SHRAY</h1> 
+</div> 
+      <div class="bg-white/5 border border-white/10 rounded-full px-
+4 py-1 flex items-center gap-2"> <div id="status-indicator” class="w-2 h-2 bg-red-500 rounded-
+full"></div>
+        <span id="status-label" class="text-
 [10px] font-bold tracking-widest uppercase text-
-white/60">System Standby</span> </div>
-</header> <main class="flex-1 flex flex-col items-
-center justify-center px-6 text-center"> <div
-class="mb-12"> <div id="mic-container"
-class="relative w-48 h-48 mx-auto flex items-
-center justify-center"> <div class="absolute
-inset-0 border-2 border-white/5 rounded-full">
-</div> <div id="visualizer" class="w-40 h-40
+white/60">System Standby</span> 
+      </div>
+</header> 
+      <main class="flex-1 flex flex-col items-
+center justify-center px-6 text-center">
+        <div class="mb-12"> 
+          <div id="mic-container" class="relative w-48 h-48 mx-auto flex items-
+center justify-center"> 
+            <div class="absolute inset-0 border-2 border-white/5 rounded-full">
+</div>
+            <div id="visualizer" class="w-40 h-40
 rounded-full bg-white/5 glow-circle flex items-
-center justify-center"> <span id="mic-icon"
-class="material-symbols-outlined text-5xl text-
-white/20">mic</span> </div> </div> </div> <h2
-id="main-text" class="text-4x| font-bold mb-4
-tracking-tight">Ready Shray?</h2> <p id="sub-
-text" class="text-white/40 text-sm max-w-xs mx-
-auto mb-10 leading-relaxed"> Tap initialize to
-enable voice recognition and start using
-commands. </p> <button id="init-button"
-class="mic-button text-black px-10 py-4
-rounded-full font-bold uppercase tracking-
-widest text-xs shadow-lg shadow-cyan-500/20
-active:scale-95 transition-transform”> Initialize
-System </button> </main> </div> <!-- LISTENING
-SCREEN --> <div id="screen-listening"
-class="screen fade-in"> <main class="flex-1 flex
-flex-col items-center justify-center px-6"> <div
+center justify-center"> 
+              <span id="mic-icon" class="material-symbols-outlined text-5xl text-
+white/20">mic</span> </div> </div> 
+        </div> <h2 id="main-text" class="text-4x| font-bold mb-4
+tracking-tight">Ready Shray?</h2> 
+        <p id="sub-text" class="text-white/40 text-sm max-w-xs mx-
+auto mb-10 leading-relaxed"> Tap initialize to enable voice recognition and start using
+commands. </p> 
+        <button id="init-button"
+class="mic-button text-black px-10 py-4 rounded-full font-bold uppercase tracking-
+widest text-xs shadow-lg shadow-cyan-500/20 active:scale-95 transition-transform”> Initialize
+System </button> 
+          </main> 
+          </div> 
+          <!-- LISTENING SCREEN --> 
+          <div id="screen-listening"class="screen fade-in"> 
+          <main class="flex-1 flex
+flex-col items-center justify-center px-6">
+            <div
 class="w-full max-w-md bg-white/5 border
 border-white/10 rounded-3xl 0-8 backdrop-blur-
-xI"> <div class="flex justify-between items-start
-mb-12"> <div> <p class="text-cyan-400 text-
-[10px] font-bold tracking-widest uppercase mb-
-1">Listening</p> <h3 id="transcript-display"
-class="text-2x| font-bold tracking-
-tight">Listening for commands...</h3> </div>
-<span class="material-symbols-outlined text-
-cyan-400 animate-pulse">sensors</span> </div>
+xI"> 
+              <div class="flex justify-between items-startmb-12"> 
+                <div> <p class="text-cyan-400 text-[10px] font-bold tracking-widest uppercase mb-1">Listening</p> <h3 id="transcript-display"
+class="text-2x| font-bold tracking-tight">
+                  Listening for commands...</h3> 
+                </div>
+<span class="material-symbols-outlined text-cyan-400 animate-pulse">sensors</span> </div>
 <div class="flex gap-1 items-end h-16 mb-8">
-<div class="flex-1 bg-cyan-400/20 rounded-t-
-sm animate-pulse” style="height: 40%"></div>
-<div class="flex-1 bg-cyan-400/40 rounded-t-
-sm animate-pulse” style="height: 80%"></div>
-<div class="flex-1 bg-cyan-400 rounded-t-sm
-animate-pulse” style="height: 60%"></div> <div
+<div class="flex-1 bg-cyan-400/20 rounded-t-sm animate-pulse” style="height: 40%"></div>
+<div class="flex-1 bg-cyan-400/40 rounded-t-sm animate-pulse” style="height: 80%"></div>
+<div class="flex-1 bg-cyan-400 rounded-t-smanimate-pulse” style="height: 60%"></div> <div
 class="flex-1 bg-cyan-400/60 rounded-t-sm
-animate-pulse” style="height: 90%"></div> <div
-class="flex-1 bg-cyan-400/30 rounded-t-sm
-animate-pulse” style="height: 50%"></div> </div>
+animate-pulse” style="height: 90%"></div> 
+  <div class="flex-1 bg-cyan-400/30 rounded-t-sm
+animate-pulse” style="height: 50%"></div>
+</div>
 <p class="text-white/40 text-xs italic">Say
 "Phone", "Music", "Search" or "Settings"...</p>
-</div> </main> </div> <!-- CONTACTS SCREEN -->
-<div id="screen-contacts" class="screen fade-
-in"> <header class="px-6 py-8 flex justify-
-between items-center"> <h2 class="text-2xI|
-font-bold">Connections</h2> <span
+</div> </main>
+        </div> 
+          <!-- CONTACTS SCREEN -->
+<div id="screen-contacts" class="screen fade-in"> <header class="px-6 py-8 flex justify-between items-center"> <h2 class="text-2xI|
+font-bold">Connections</h2> 
+  <span
 class="material-symbols-outlined text-cyan-
-400">person_add</span> </header> <div
-class="px-6 space-y-4"> <div class="bg-white/5
-p-4 rounded-2xl flex items-center gap-4 border
-border-white/5"> <div class="w-12 h-12 rounded-
-full bg-cyan-500/20 flex items-center justify-
+400">person_add</span>
+</header> 
+  <div class="px-6 space-y-4"> 
+    <div class="bg-white/5p-4 rounded-2xl flex items-center gap-4 border
+border-white/5"> 
+      <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-
 center text-cyan-400 font-bold text-xI">A</div>
 <div class="flex-1"> <p class="font-bold">Aryan
-Sharma</p> <p class="text-xs text-
-white/40">Mobile « +91 98765 43210</p> </div>
+Sharma</p> 
+  <p class="text-xs text-white/40">Mobile « +91 98765 43210</p> </div>
 <span class="material-symbols-outlined text-
-[#00dbe7]">call</span> </div> <div class="bg-
-white/5 p-4 rounded-2x| flex items-center gap-4
-border border-white/5"> <div class="w-12 h-12
-rounded-full bg-pink-500/20 flex items-center
+[#00dbe7]">call</span>
+    </div>
+    <div class="bg-white/5 p-4 rounded-2x| flex items-center gap-4
+border border-white/5"> 
+      <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center
 justify-center text-pink-400 font-bold text-
-xI">P</div> <div class="flex-1"> <p class="font-
-bold">Priya Verma</p> <p class="text-xs text-
-white/40">Work « +91 99887 76655</p> </div>
+xI">P</div> 
+      <div class="flex-1"> <p class="font-bold">Priya Verma</p> <p class="text-xs text-
+white/40">Work « +91 99887 76655</p> 
+      </div>
 <span class="material-symbols-outlined text-
-[#00dbe7]">call</span> </div> <div class="bg-
-white/5 p-4 rounded-2x| flex items-center gap-4
-border border-white/5"> <div class="w-12 h-12
-rounded-full bg-orange-500/20 flex items-
+[#00dbe7]">call</span>
+    </div> 
+    <div class="bg-white/5 p-4 rounded-2x| flex items-center gap-4
+border border-white/5">
+      <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-
 center justify-center text-orange-400 font-bold
-text-xI">R</div> <div class="flex-1"> <p
-class="font-bold">Rahul Singh</p> <p
+text-xI">R</div>
+      <div class="flex-1"> <p class="font-bold">Rahul Singh</p> <p
 class="text-xs text-white/40">Home * +91 91234
-56789</p> </div> <span class="material-symbols-
-outlined text-[#00dbe7]">call</span> </div>
-</div> </div> <!-- PLAYER SCREEN --> <div
-id="screen-player" class="screen fade-in">
-<header class="px-6 py-8 text-center"> <h2
-class="text-xl font-bold text-cyan-400
-uppercase tracking-widest text-[10px]">Now
-Playing</h2> </header> <main class="flex-1 flex
-flex-col items-center justify-center px-6"> <div
-class="w-64 h-64 bg-white/5 rounded-3xI|
+56789</p> 
+      </div> 
+      <span class="material-symbols-outlined text-[#00dbe7]">call</span> </div>
+</div>
+</div> 
+          <!-- PLAYER SCREEN --> 
+          <div id="screen-player" class="screen fade-in">
+<header class="px-6 py-8 text-center"> 
+  <h2 class="text-xl font-bold text-cyan-400
+uppercase tracking-widest text-[10px]">Now Playing</h2> </header> <main class="flex-1 flex
+flex-col items-center justify-center px-6"> 
+  <div class="w-64 h-64 bg-white/5 rounded-3xI|
 border border-white/10 mb-8 overflow-hidden
-shadow-2x| shadow-black/50"> <img
-src="https://images.unsplash.com/photo-
-1614613535308-eb5fbd3d2¢c17?
-w=400&h=4004&fit=crop" class="w-full h-full
-object-cover opacity-80" alt="Album Art"> </div>
+shadow-2x| shadow-black/50"> 
+    <img src="https://images.unsplash.com/photo-
+1614613535308-eb5fbd3d2¢c17?w=400&h=4004&fit=crop" class="w-full h-full
+object-cover opacity-80" alt="Album Art"> 
+  </div>
 <h3 class="text-2xl font-bold mb-1">Cyberpunk
-Melodies</h3> <p class="text-white/40 mb-8
-font-medium">Shray Originals * Al
-Generated</p> <div class="w-full max-w-xs mb-
-10"> <div class="h-1 bg-white/10 rounded-full w-
-full mb-2 overflow-hidden"> <div class="h-full
-bg-[#00dbe7] w-1/3"></div> </div> <div
-class="flex justify-between text-[10px] text-
+Melodies</h3>
+  <p class="text-white/40 mb-8 font-medium">Shray Originals * Al
+Generated</p> 
+  <div class="w-full max-w-xs mb-10">
+    <div class="h-1 bg-white/10 rounded-full w-full mb-2 overflow-hidden"> 
+      <div class="h-full bg-[#00dbe7] w-1/3"></div> 
+    </div>
+    <div class="flex justify-between text-[10px] text-
 white/30 font-bold uppercase tracking-wider">
-<span>1:24</span> <span>3:45</span> </div>
-</div> <div class="flex items-center gap-8">
+<span>1:24</span> 
+      <span>3:45</span>
+    </div>
+</div> 
+  <div class="flex items-center gap-8">
 <span class="material-symbols-outlined text-3xI|
 text-white/40 hover:text-white transition-
-colors">skip_previous</span> <div class="w-16
-h-16 rounded-full bg-[#00dbe7] text-black flex
+colors">skip_previous</span> 
+    <div class="w-16 h-16 rounded-full bg-[#00dbe7] text-black flex
 items-center justify-center shadow-Ig shadow-
 cyan-500/40 active:scale-90 transition-
-transform"> <span class="material-symbols-
-outlined text-4xI">play_arrow</span> </div>
+transform"> 
+      <span class="material-symbols-outlined text-4xI">play_arrow</span> </div>
 <span class="material-symbols-outlined text-3xI|
 text-white/40 hover:text-white transition-
-colors">skip_next</span> </div> </main> </div>
-<!-- SETTINGS SCREEN --> <div id="screen-
-settings" class="screen fade-in"> <header
-class="px-6 py-8"> <h2 class="text-2x| font-
-bold">System Config</h2> </header> <div
-class="px-6 space-y-2"> <div class="p-5 flex
-justify-between items-center bg-white/5
-rounded-2x| border border-white/5"> <div> <p
-class="font-bold">Bilingual Mode</p> <p
-class="text-[11px] text-white/40 font-
-medium">English & Hindi support active</p>
-</div> <div class="w-12 h-6 bg-cyan-400
-rounded-full relative shadow-
-[0_0_10px_rgba(0,219,231,0.3)]"> <div
-class="absolute right-1 top-1 w-4 h-4 bg-white
-rounded-full"></div> </div> </div> <div class="p-5
-flex justify-between items-center bg-white/5
-rounded-2x| border border-white/5"> <div> <p
-class="font-bold">Wake Word Detection</p> <p
-class="text-[11px] text-white/40 font-
-medium">"Ready Shray"</p> </div> <span
-class="material-symbols-outlined text-
-white/20">chevron_right</span> </div> <div
-class="p-5 flex justify-between items-center bg-
-white/5 rounded-2xl border border-white/5">
-<div> <p class="font-bold">Privacy Controls</p>
+colors">skip_next</span>
+  </div> 
+</main> 
+          </div>
+<!-- SETTINGS SCREEN --> 
+          <div id="screen-settings" class="screen fade-in"> <header
+class="px-6 py-8"> 
+            <h2 class="text-2x| font-bold">System Config</h2> </header> <div
+class="px-6 space-y-2"> 
+              <div class="p-5 flex justify-between items-center bg-white/5
+rounded-2x| border border-white/5"> 
+                <div>
+                  <p class="font-bold">Bilingual Mode</p> <p class="text-[11px] text-white/40 font-medium">English & Hindi support active</p>
+</div> <div class="w-12 h-6 bg-cyan-400 rounded-full relative shadow-
+[0_0_10px_rgba(0,219,231,0.3)]"> 
+  <div class="absolute right-1 top-1 w-4 h-4 bg-white
+rounded-full"></div> 
+</div> 
+              </div> 
+              <div class="p-5 flex justify-between items-center bg-white/5
+rounded-2x| border border-white/5"> 
+                <div> 
+                  <p class="font-bold">Wake Word Detection</p> <p
+class="text-[11px] text-white/40 font-medium">"Ready Shray"</p> </div> <span
+class="material-symbols-outlined text-white/20">chevron_right</span> </div> <div
+class="p-5 flex justify-between items-center bg-white/5 rounded-2xl border border-white/5">
+<div> 
+  <p class="font-bold">Privacy Controls</p>
 <p class="text-[11px] text-white/40 font-
-medium">Local processing only</p> </div> <span
+medium">Local processing only</p> 
+</div> 
+  <span
 class="material-symbols-outlined text-
-white/20">security</span> </div> </div> </div> <!-
-- NAVIGATION BAR --> <nav class="fixed
-bottom-0 left-0 w-full px-6 py-6 flex justify-
-around items-center bg-gradient-to-t from-
-black to-transparent z-[100] backdrop-blur-
-sm"> <button
-onclick="showScreen(‘dashboard')" class="nav-
-btn p-3 active" id="nav-dashboard"> <span
+white/20">security</span> 
+</div> 
+            </div> 
+          </div> 
+          <!-- NAVIGATION BAR -->
+          <nav class="fixed bottom-0 left-0 w-full px-6 py-6 flex justify-
+around items-center bg-gradient-to-t from-black to-transparent z-[100] backdrop-blur-
+sm"> 
+            <button onclick="showScreen(‘dashboard')" class="nav-btn p-3 active" id="nav-dashboard"> <span
 class="material-symbols-outlined text-
-2xI">mic</span> </button> <button
-onclick="showScreen('contacts')" class="nav-
-btn p-3 text-white/20" id="nav-contacts"> <span
-class="material-symbols-outlined text-
-2xI">call</span> </button> <button
-onclick="showScreen('player’)" class="nav-btn
-p-3 text-white/20" id="nav-player"> <span
-class="material-symbols-outlined text-
-2xI">play_circle</span> </button> <button
-onclick="showScreen('settings')" class="nav-btn
-p-3 text-white/20" id="nav-settings"> <span
-class="material-symbols-outlined text-
-2xI">settings</span> </button> </nav> <script> //
-NAVIGATION LOGIC function
-showScreen(screenld) {
-document.querySelectorAll('.screen').forEach(s
-=> s.classList.remove('active'));
-document.getElementByld(‘'screen-' +
-screenld).classList.add (‘active’);
-document.querySelectorAll('.nav-btn').forEach(b
-=> { b.classList.remove('active');
-b.classList.add('text-white/20'); }); const
-activeBtn = document.getElementByld('nav-' +
-screenld); if(activeBtn) {
-activeBtn.classList.add(‘active');
-activeBtn.classList.remove(‘text-white/20"); } } //
-VOICE RECOGNITION LOGIC const initBtn =
-document.getElementByld('init-button’); const
-transcriptDisplay =
-document.getElementByld(‘transcript-display');
-initBtn.addEventListener('click’, () => { const
-SpeechRecognition =
-window.SpeechRecognition ||
-window.webkitSpeechRecognition; if
-('SpeechRecognition) { alert("Please use Chrome
-or Safari for voice features."); return; } const
-recognition = new SpeechRecognition();
-recognition.continuous = true;
+2xI">mic</span> 
+            </button>
+            <button onclick="showScreen('contacts')" class="nav-
+btn p-3 text-white/20" id="nav-contacts"> 
+              <span class="material-symbols-outlined text-
+2xI">call</span>
+            </button> 
+            <button onclick="showScreen('player’)" class="nav-btn
+p-3 text-white/20" id="nav-player">
+              <span class="material-symbols-outlined text-
+2xI">play_circle</span> 
+            </button>
+            <button onclick="showScreen('settings')" class="nav-btn
+p-3 text-white/20" id="nav-settings"> 
+              <span class="material-symbols-outlined text-
+2xI">settings</span> 
+            </button> 
+          </nav> 
+          <script> 
+            //NAVIGATION LOGIC function
+showScreen(screenld) {document.querySelectorAll('.screen').forEach(s
+=> s.classList.remove('active'));document.getElementByld(‘'screen-' +
+screenld).classList.add (‘active’);document.querySelectorAll('.nav-btn').forEach(b
+=> { b.classList.remove('active');b.classList.add('text-white/20'); }); const
+activeBtn = document.getElementByld('nav-' +screenld); if(activeBtn) {
+activeBtn.classList.add(‘active');activeBtn.classList.remove(‘text-white/20"); } } //
+VOICE RECOGNITION LOGIC const initBtn =document.getElementByld('init-button’); const
+transcriptDisplay =document.getElementByld(‘transcript-display');
+initBtn.addEventListener('click’, () => { constSpeechRecognition =
+window.SpeechRecognition ||window.webkitSpeechRecognition; if
+('SpeechRecognition) { alert("Please use Chrome or Safari for voice features."); return; } const
+recognition = new SpeechRecognition();recognition.continuous = true;
 recognition.interimResults = true;
 recognition.lang = 'en-US'"; recognition.onstart =
 () => { initBtn.style.display = ‘none’;
